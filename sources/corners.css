@@ -1,4 +1,6 @@
 
+/* Existing styles */
+
 .corner {
     position: absolute;
     z-index: 1; 
@@ -47,4 +49,19 @@
 .bottom-right .vertical-line {
     bottom: 0;
     right: 0;
+}
+
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .top-left, .bottom-right {
+        top: 1em;
+        left: 1em;
+        bottom: 1em;
+        right: 1em;
+    }
+    .horizontal-line, .vertical-line {
+        width: 2em;
+        height: 2em;
+    }
 }
