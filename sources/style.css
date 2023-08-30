@@ -248,3 +248,15 @@ body {
         height: auto;
     }
 }
+
+/* Make .lorem-text more responsive */
+.lorem-text {
+    font-size: 1.5rem; /* Use rem for scalable text */
+    word-wrap: break-word; /* Wrap text inside the container */
+}
+
+@media screen and (max-width: 768px) {
+    .lorem-text {
+        font-size: 0.9rem; /* Slightly smaller text on mobile screens */
+    }
+}
