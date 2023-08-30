@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.left-content{    
+    width: 33.33vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Distribute space between the children */
+    height: 100%;
+}
+
+
+.right-content {
+    /* background-color: #FCF5C7;*/
+    background-color: #F4F0bb;
+    width: 66.67vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 33.33vw;
+}
+    
+
+.dark-section {
+    /** background-color: #333; **/
+    background-color: #FCF5C7;
+    height: 100vh;
+    width: 33.33vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.container {
+    width: 33.33vw;
+    height: 33.33vw;
+    position: relative;
+}
+
+
+.intro-text {
+    /** color: #e0e0e0; **/
+    color: #25283d; 
+    text-align: center;
+    position: absolute;
+    width: 100%;  
+    top: 63%;  
+    left: 50%;
+    transform: translateX(-50%); 
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+
+.circle-image {
+    width: 40%;  
+    height: 40%;  
+    background-image: url('ich.jpg'); 
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.lorem-text {
+    text-align: center;
+    position: absolute;
+    width: 65%;  
+    top: 75%;  
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    
+    font-family: 'Barlow Condensed', sans-serif;
+    line-height: 1.5;  /* Increase line height for better readability */
+    font-size: 23px;   /* Adjust font size to a legible size */
+    font-weight: 400;  /* Regular font weight for body text */
+    margin-bottom: 20px;  /* Space between paragraphs */
+    /** color: #e0e0e0;   Slightly lighter text for better contrast against the dark background */
+    color: #25283d; 
+    text-align: justify;  /* Justify the text for a neat alignment, but be cautious as it can sometimes reduce readability */
+    padding: 0 15px;
+}
+
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 85vh;
+    align-self: end;
+}
+ 
+
+.social-links a i {
+    font-size: 3.5em; 
+}
+
+
+.social-links a {
+    /* color: white; */
+    color: #25283d; 
+    transition: 0.3s;
+}
+
+
+.social-links a:hover {
+    color: #ddd;
+}
+    
+
+.polaroids-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+    gap: 0.01cm;
+}
+
+
+.polaroids-row{
+    margin-bottom: 1cm;
+}
+
+
+#second-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.polaroid {
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    border-radius: 5px; 
+    margin: 0.01cm;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    padding: 0.35cm;
+    box-sizing: border-box;
+    transition: transform 0.3s, z-index 0.3s;
+    margin-right: -0.7cm;
+    margin-bottom: -0.7cm;
+    font-weight: bold;
+
+    font-family: 'Barlow Condensed', sans-serif;
+    line-height: 1.5;  /* Increase line height for better readability */
+    font-size: 18px;   /* Adjust font size to a legible size */
+    font-weight: 400; 
+}
+
+
+.polaroid img {
+    width: 100%;
+    height: 80%;
+    border-radius: 5px 5px 0 0;
+    transform-origin: 50% 50%;
+}
+
+
+.polaroid:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(2.0);
+    z-index: 10;
+}
+
+
+.polaroid::before {
+    content: attr(data-caption);
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    text-align: center;
+    font-weight: bold;
+    max-width: 80%; 
+    overflow-y: auto;
+    white-space: normal;
+}
+
+
+.polaroid:hover::before {
+    display: block;
+}
+
+
+.caption {
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+
+/* Hide the info by default */
+.info {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Show the info when hovering over the polaroid */
+.polaroid:hover .info {
+    visibility: visible;
+}

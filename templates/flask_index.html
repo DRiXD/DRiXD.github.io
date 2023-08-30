@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='corners.css') }}">
+
+
+    <title>Denis Website</title>
+
+</head>
+<body>
+    <div class="main-content">
+        <div class="corner top-left">
+            <div class="horizontal-line"></div>
+            <div class="vertical-line"></div>
+        </div>
+        <div class="corner bottom-right">
+            <div class="horizontal-line"></div>
+            <div class="vertical-line"></div>
+        </div>
+        
+        <div class="left-content">
+            <div class="dark-section"></div>
+            <div class="container">
+
+            <div class="circle-image"></div>
+            <div class="intro-text">Hi, I am Denis</div>
+            <div class="lorem-text">
+                Hello there! I'm a computer science student hailing from the beautiful landscapes of Germany. I have a burgeoning passion for data science and deep learning, and I'm always eager to dive deeper into these fascinating realms. This page serves as a small window into my world, and I'm thrilled to have you here. Let's explore and connect!
+            </div>
+            
+            <div class="social-links">
+                <a href="YOUR_LINKEDIN_URL" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="YOUR_GITHUB_URL" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="YOUR_INSTAGRAM_URL" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+            
+        </div>
+    
+        <div class="right-content">
+            <div class="polaroids-container">
+                <div class="polaroids-row">
+                {% for polaroid in polaroids[:3] %}
+                    <div class="polaroid" style="transform: rotate({{ polaroid|random_rotate }}deg);" data-caption="{{polaroid.info}}">
+                    <img src="{{ polaroid.image }}" alt="Polaroid Image">
+                    <div class="caption">{{ polaroid.caption }}</div>
+                </div>
+                {% endfor %}
+            
+                <div class="polaroids-row" id="second-row">
+                {% for polaroid in polaroids[3:] %}
+                    <div class="polaroid" style="transform: rotate({{ polaroid|random_rotate }}deg);"  data-caption="{{polaroid.info}}">
+                    <img src="{{ polaroid.image }}" alt="Polaroid Image">
+                    <div class="caption">{{ polaroid.caption }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

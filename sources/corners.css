@@ -1,0 +1,50 @@
+
+.corner {
+    position: absolute;
+    z-index: 1; 
+}
+
+.top-left {
+    top: 2cm;
+    left: 2cm;
+}
+
+.bottom-right {
+    bottom: 2cm;
+    right: 2cm;
+}
+
+.horizontal-line, .vertical-line {
+    background-color: #52796F;
+    position: absolute;
+}
+
+.horizontal-line {
+    width: 4cm;
+    height: 0.2cm;
+}
+
+.vertical-line {
+    width: 0.2cm;
+    height: 4cm;
+}
+
+.top-left .horizontal-line {
+    top: 0;
+    left: 0;
+}
+
+.top-left .vertical-line {
+    top: 0;
+    left: 0;
+}
+
+.bottom-right .horizontal-line {
+    bottom: 0;
+    right: 0;
+}
+
+.bottom-right .vertical-line {
+    bottom: 0;
+    right: 0;
+}

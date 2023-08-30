@@ -1,106 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./sources/style.css">
+    <link rel="stylesheet" href="./sources/corners.css">
 
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
 
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #ccc;
-  padding: 20px;
-}
+    <title>Denis Website</title>
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  height: 300px; /* only for demonstration, should be removed */
-}
-
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
 </head>
 <body>
+    <div class="main-content">
+        <div class="corner top-left">
+            <div class="horizontal-line"></div>
+            <div class="vertical-line"></div>
+        </div>
+        <div class="corner bottom-right">
+            <div class="horizontal-line"></div>
+            <div class="vertical-line"></div>
+        </div>
+        
+        <div class="left-content">
+            <div class="dark-section"></div>
+            <div class="container">
 
-<h2>CSS Layout Float</h2>
-<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
-<p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)</p>
+            <div class="circle-image"></div>
+            <div class="intro-text">Hi, I am Denis</div>
+            <div class="lorem-text">
+                Hello there! I'm a computer science student hailing from the beautiful landscapes of Germany. I have a burgeoning passion for data science and deep learning, and I'm always eager to dive deeper into these fascinating realms. This page serves as a small window into my world, and I'm thrilled to have you here. Let's explore and connect!
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/denis-reibel-123577234/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://github.com/DRiXD" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.instagram.com/denisr_22/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+            
+        </div>
+    
+        <div class="right-content">
+            <div class="polaroids-container">
+                <div class="polaroids-row">
+                <div class="polaroid-container1"><!-- First three polaroids will be populated here by JavaScript --></div>
+            
+                <div class="polaroids-row" id="second-row">
+                <div class="polaroid-container2"><!-- Rest of the polaroids will be populated here by JavaScript --></div>
+            </div>
+        </div>
+    </div>
+<script>
 
-<header>
-  <h2>Cities</h2>
-</header>
+const polaroids = [
+    {image: "bouldering.png", caption: "Sports", info: "Among bouldering, biking and crossfit I love to do lots of different sports and spent quite some of my freetime exercising"},
+    {image: "plants.png", caption: "Plants", info: "Recently I've grown (pun intended) an interest in raising and caring for different house plants"},
+    {image: "coding.png", caption: "Computer Science", info: "What started as an hobby turned into a passion. I am enthusiasticly learning and testing out the diverse world of computer science. For details about my projects check out my github"},
+    {image: "hike.png", caption: "Outdoor & Nature", info: "To relax from everyday life I love to do hiking trips and spent time outdoors"},
+    {image: "scout.png", caption: "Scouting & Social Engagement", info: "My passion for scouting started over 15 years ago and until today I've met a lot of amazing people and experienced a lot of adventures with my group"},
+    // maybe add gaming polaroid?
+];
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="#">London</a></li>
-      <li><a href="#">Paris</a></li>
-      <li><a href="#">Tokyo</a></li>
-      <li><a href="#">Ulm</a></li>
 
-    </ul>
-  </nav>
-  
-  <article>
-    <h1>London</h1>
-    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-  </article>
-</section>
 
-<footer>
-  <p>Footer</p>
-</footer>
+function randomRotate() {
+    const angles = [-15, -10, -5, 5, 10, 15];
+    return angles[Math.floor(Math.random() * angles.length)];
+}
 
+
+
+function shuffleAndPopulate() {
+    // Shuffle the 'polaroids' array
+    for (let i = polaroids.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [polaroids[i], polaroids[j]] = [polaroids[j], polaroids[i]];
+    }
+
+    // Populate the first three polaroids
+    const container1 = document.querySelector('.polaroid-container1');
+    for (let i = 0; i < 3; i++) {
+        populatePolaroid(container1, polaroids[i]);
+    }
+
+    // Populate the rest of the polaroids
+    const container2 = document.querySelector('.polaroid-container2');
+    for (let i = 3; i < polaroids.length; i++) {
+        populatePolaroid(container2, polaroids[i]);
+    }
+}
+
+function populatePolaroid(container, polaroid) {
+    const polaroidElement = document.createElement("div");
+    polaroidElement.className = "polaroid";
+    
+    const rotateAngle = randomRotate();
+    polaroidElement.style.transform = `rotate(${rotateAngle}deg)`;
+    polaroidElement.setAttribute("data-caption", polaroid.info);
+
+    
+    const imageElement = document.createElement("img");
+    imageElement.src = `./sources/${polaroid.image}`;
+    
+    const captionElement = document.createElement("div");
+    captionElement.className = "caption";
+    captionElement.textContent = polaroid.caption;
+    
+    polaroidElement.appendChild(imageElement);
+    polaroidElement.appendChild(captionElement);
+    
+    container.appendChild(polaroidElement);
+}
+
+</script>
+<script>window.onload = shuffleAndPopulate;</script>
 </body>
 </html>
-
