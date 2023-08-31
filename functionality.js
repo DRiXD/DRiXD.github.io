@@ -54,4 +54,9 @@ function populatePolaroid(container, polaroid) {
     container.appendChild(polaroidElement);
 }
 
-window.onload = shuffleAndPopulate;
+window.onload = function() {
+    shuffleAndPopulate();
+    console.log("Polaroids have been populated.");
+    var event = new Event('polaroidRendered');
+    document.dispatchEvent(event);
+};
