@@ -8,9 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../sources/style.css">
-    <link rel="stylesheet" href="../sources/corners.css">
-
+    <link rel="stylesheet" href="../sources/css/style.css">
+    <link rel="stylesheet" href="../sources/css/corners.css">
 
     <title>Denis Website</title>
 
@@ -18,7 +17,7 @@
 <body>
     <div id="warning-message">
         <p>We're sorry! This webpage isn't quite ready for primetime on smaller screens. The devs are hunched over their keyboards to fix this!</p>
-        <img src="../sources/Chromium_T-Rex-error-offline.svg.png" alt="Warning Image">
+        <img src="../sources/images/Chromium_T-Rex-error-offline.svg.png" alt="Warning Image">
     </div>
 
     <div class="main-content">
@@ -52,10 +51,10 @@
         <div class="right-content">
             <div class="polaroids-container">
                 <div class="polaroids-row">
-                <div class="polaroid-container1"><!-- First three polaroids will be populated here by JavaScript --></div>
+                <div class="polaroid-container1"></div>
             
                 <div class="polaroids-row" id="second-row">
-                <div class="polaroid-container2"><!-- Rest of the polaroids will be populated here by JavaScript --></div>
+                <div class="polaroid-container2"></div>
             </div>
         </div>
     </div>
@@ -109,7 +108,7 @@ function populatePolaroid(container, polaroid) {
 
     
     const imageElement = document.createElement("img");
-    imageElement.src = `../sources/${polaroid.image}`;
+    imageElement.src = `../sources/images/${polaroid.image}`;
     
     const captionElement = document.createElement("div");
     captionElement.className = "caption";
