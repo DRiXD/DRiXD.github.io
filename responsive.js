@@ -11,8 +11,6 @@
             polaroid.style.width = '200px';
             polaroid.style.height = '250px';
             polaroid.style.fontSize = '16px';
-
-
     
         } else if ((window.innerWidth > 600 && window.innerWidth <= 900) || 
                    (window.innerHeight > 600 && window.innerHeight <= 900)) {
@@ -23,7 +21,6 @@
             polaroid.style.height = '300px';
             polaroid.style.fontSize = '17px';
 
-    
         } else {
             loremTextDiv.style.fontSize = '22px';
             loremTextDiv.style.lineHeight = '1.6';

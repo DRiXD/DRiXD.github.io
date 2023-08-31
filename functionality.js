@@ -4,7 +4,7 @@ const polaroids = [
     {image: "plants.png", caption: "Plants", info: "Recently I've grown (pun intended) an interest in raising and caring for different house plants"},
     {image: "coding.png", caption: "Computer Science", info: "What started as an hobby turned into a passion. I am enthusiasticly learning and testing out the diverse world of computer science. For details about my projects check out my github"},
     {image: "hike.png", caption: "Outdoor & Nature", info: "To relax from everyday life I love to do hiking trips and spend time outdoors"},
-    {image: "scout.png", caption: "Scouting & Social Engagement", info: "My passion for scouting started over 15 years ago and until today I've met a lot of amazing people and experienced a lot of adventures with my group"},
+    {image: "scout.png", caption: "Scouting & Social Engagement", info: "My passion for scouting started over 15 years ago and until today I've met a lot of amazing people and experienced innumerable adventures with my group"},
     // maybe add gaming polaroid?
 ];
 
