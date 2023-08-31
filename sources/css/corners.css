@@ -5,13 +5,13 @@
 }
 
 .top-left {
-    top: 2cm;
-    left: 2cm;
+    top: 3%;
+    left: 3%;
 }
 
 .bottom-right {
-    bottom: 2cm;
-    right: 2cm;
+    bottom: 3%;
+    right: 3%;
 }
 
 .horizontal-line, .vertical-line {
