@@ -64,7 +64,7 @@ body {
 .circle-image {
     width: 40%;  
     height: 40%;  
-    background-image: url('ich.jpg'); 
+    background-image: url('../images/ich.jpg'); 
     background-size: cover;
     background-position: center;
     border-radius: 50%;
