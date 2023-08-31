@@ -1,6 +1,4 @@
 
-/* Existing styles */
-
 .corner {
     position: absolute;
     z-index: 1; 
@@ -52,7 +50,6 @@
 }
 
 
-/* Media Queries for Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .top-left, .bottom-right {
         top: 1em;

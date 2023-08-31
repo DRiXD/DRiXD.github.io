@@ -16,19 +16,16 @@ function randomRotate() {
 
 
 function shuffleAndPopulate() {
-    // Shuffle the 'polaroids' array
     for (let i = polaroids.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [polaroids[i], polaroids[j]] = [polaroids[j], polaroids[i]];
     }
 
-    // Populate the first three polaroids
     const container1 = document.querySelector('.polaroid-container1');
     for (let i = 0; i < 3; i++) {
         populatePolaroid(container1, polaroids[i]);
     }
 
-    // Populate the rest of the polaroids
     const container2 = document.querySelector('.polaroid-container2');
     for (let i = 3; i < polaroids.length; i++) {
         populatePolaroid(container2, polaroids[i]);
