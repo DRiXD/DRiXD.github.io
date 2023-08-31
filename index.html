@@ -8,14 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="./sources/style.css">
-    <link rel="stylesheet" href="./sources/corners.css">
+    <link rel="stylesheet" href="../sources/style.css">
+    <link rel="stylesheet" href="../sources/corners.css">
 
 
     <title>Denis Website</title>
 
 </head>
 <body>
+    <div id="warning-message">
+        <p>We're sorry! This webpage isn't quite ready for primetime on smaller screens. The devs are hunched over their keyboards to fix this!</p>
+        <img src="../sources/Chromium_T-Rex-error-offline.svg.png" alt="Warning Image">
+    </div>
+
     <div class="main-content">
         <div class="corner top-left">
             <div class="horizontal-line"></div>
@@ -104,7 +109,7 @@ function populatePolaroid(container, polaroid) {
 
     
     const imageElement = document.createElement("img");
-    imageElement.src = `./sources/${polaroid.image}`;
+    imageElement.src = `../sources/${polaroid.image}`;
     
     const captionElement = document.createElement("div");
     captionElement.className = "caption";
@@ -115,6 +120,35 @@ function populatePolaroid(container, polaroid) {
     
     container.appendChild(polaroidElement);
 }
+
+function adjustTextSizeAndSpacing() {
+    const loremTextDiv = document.querySelector('.lorem-text');
+    const introTextDiv = document.querySelector('.intro-text');
+
+    
+    if (window.innerWidth <= 600 || window.innerHeight <= 600) {
+        loremTextDiv.style.fontSize = '14px';
+        loremTextDiv.style.lineHeight = '1.2';
+        introTextDiv.style.fontSize = '30px';
+
+    } else if ((window.innerWidth > 600 && window.innerWidth <= 900) || 
+               (window.innerHeight > 600 && window.innerHeight <= 900)) {
+        loremTextDiv.style.fontSize = '18px';
+        loremTextDiv.style.lineHeight = '1.4';
+        introTextDiv.style.fontSize = '40px';
+
+    } else {
+        loremTextDiv.style.fontSize = '22px';
+        loremTextDiv.style.lineHeight = '1.6';
+        introTextDiv.style.fontSize = '50px';
+    }
+}
+
+// Initial adjustment
+adjustTextSizeAndSpacing();
+
+// Adjust text size and spacing whenever the window is resized
+window.addEventListener('resize', adjustTextSizeAndSpacing);
 
 </script>
 <script>window.onload = shuffleAndPopulate;</script>

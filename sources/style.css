@@ -1,5 +1,3 @@
-
-/* Existing styles */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -88,7 +86,7 @@ body {
     
     font-family: 'Barlow Condensed', sans-serif;
     line-height: 1.5;  /* Increase line height for better readability */
-    font-size: 23px;   /* Adjust font size to a legible size */
+     /* font-size: 23px;  Adjust font size to a legible size */
     font-weight: 400;  /* Regular font weight for body text */
     margin-bottom: 20px;  /* Space between paragraphs */
     /** color: #e0e0e0;   Slightly lighter text for better contrast against the dark background */
@@ -236,27 +234,41 @@ body {
     visibility: visible;
 }
 
-/* Media Queries for Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-    .left-content {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-    .right-content {
-        width: 100%;
-        height: auto;
+
+/* Updated CSS for the warning message that will cover the whole page when the display gets too small */
+#warning-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FCF5C7;
+    z-index: 9999;
+
+    font-family: 'Barlow Condensed', sans-serif;
+    line-height: 1.5;  /* Increase line height for better readability */
+     /* font-size: 23px;  Adjust font size to a legible size */
+    font-weight: 600;  /* Regular font weight for body text */
+    margin-bottom: 20px;  /* Space between paragraphs */
+    /** color: #e0e0e0;   Slightly lighter text for better contrast against the dark background */
+    color: #25283d; 
+    text-align: center;  /* Justify the text for a neat alignment, but be cautious as it can sometimes reduce readability */
+    padding-top: 20%;
+}
+
+#warning-message img {
+    width: 100px;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+    margin: 20px auto;
+}
+
+@media only screen and (max-width: 1250px), only screen and (max-height: 700px) {
+    #warning-message {
+        display: block;
     }
 }
 
-/* Make .lorem-text more responsive */
-.lorem-text {
-    font-size: 1.5rem; /* Use rem for scalable text */
-    word-wrap: break-word; /* Wrap text inside the container */
-}
 
-@media screen and (max-width: 768px) {
-    .lorem-text {
-        font-size: 0.9rem; /* Slightly smaller text on mobile screens */
-    }
-}
