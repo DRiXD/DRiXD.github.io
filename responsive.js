@@ -4,7 +4,7 @@
     
         
         if (window.innerWidth <= 600 || window.innerHeight <= 600) {
-            loremTextDiv.style.fontSize = '14px';
+            loremTextDiv.style.fontSize = '16px';
             loremTextDiv.style.lineHeight = '1.2';
             introTextDiv.style.fontSize = '30px';
     
