@@ -229,28 +229,62 @@ body {
 }
 
 
+
+
 #warning-message {
-    display: none;
+    display: none; /* Initial state is hidden */
+    
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     width: 100%;
+    transform: translate(-50%, -50%);
     height: 100%;
-    background-color: #FCF5C7;
+    /* background-color: #FCF5C7; */
+    background-color: #2C6E49;
     z-index: 9999;
 
-    font-family: 'Barlow Condensed', sans-serif;
-    line-height: 1.5;  
-    font-weight: 600; 
-    margin-bottom: 20px;  
-    color: #25283d; 
-    text-align: center;
-    padding-top: 20%;
+
+    margin-bottom: 20px;
+
 }
 
-#warning-message img {
-    width: 100px;
-    height: auto;
+#warning-message.active {
+    display: block; /* Display it as a block when active */
+
+}
+
+#center {
+    position: absolute; /* Absolutely position the center div */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; /* Auto margin for centering */
+    display: flex; /* Use flexbox for the contents */
+    flex-direction: column; /* Aligns children vertically */
+    justify-content: center; /* Centers children vertically in the div */
+    align-items: center; /* Centers children horizontally in the div */
+    text-align: center; /* For horizontal text alignment */
+    /* Additional styling as required */
+}
+
+#center p {
+    margin-left: 30px;  
+    margin-right: 30px;  
+  
+    color: #FFFFFF; 
+    text-align: center;
+    padding-top: 20%;
+    font-family: 'Barlow Condensed', sans-serif;
+    line-height: 1.5;  
+    font-weight: 600;
+    font-size: 30px;
+}
+
+#center img {
+    width: 150px;   
+    height: 150px;
     margin-top: 20px;
     display: block;
     margin: 20px auto;
