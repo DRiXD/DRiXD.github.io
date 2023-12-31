@@ -275,19 +275,19 @@ body {
   
     color: #FFFFFF; 
     text-align: center;
-    padding-top: 20%;
+    padding-top: 5%;
     font-family: 'Barlow Condensed', sans-serif;
     line-height: 1.5;  
     font-weight: 600;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #center img {
     width: 150px;   
     height: 150px;
-    margin-top: 20px;
+    margin-top: 1^5px;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
 }
 
 @media only screen and (max-width: 1100px), only screen and (max-height: 500px) {
